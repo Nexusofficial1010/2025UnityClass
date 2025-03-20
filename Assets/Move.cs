@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     //플레이어의 이동속도
     private float speed = 5f;
-    private float jumpForce = 40f;
+    private float jumpForce = 20f;
 
     private int jumpCnt = 0;
 
@@ -25,17 +25,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Input.GetAxis : 수평이나 수직 버튼의 입력을 받으면 -1f ~ 1f의 값을 반환
-        //Horizontal : 키보드 A,D의 값
-        //Vertical : 키보드 W,S의 값
-        movement.x = Input.GetAxis("Horizontal");
-        movement.z = Input.GetAxis("Vertical");
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
 
-        //Normalize : 벡터를 정규화 해줌
-        movement.Normalize();
-
-        //rigid.velocity 즉 rigid의 속도에 movement(키보드 입력값) * 속도를 곱한다.
-        rigid.velocity = movement * speed;
+        movement = transform.forward * v + transform.right * h;
+        transform.position += movement * speed * Time.deltaTime;
     }
 
     private void Update()
