@@ -367,6 +367,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1199501966}
+  detectionRange: 20
+  attackRange: 2
+  attackCooldown: 1
 --- !u!114 &348242504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -809,6 +812,7 @@ GameObject:
   - component: {fileID: 1199501962}
   - component: {fileID: 1199501961}
   - component: {fileID: 1199501967}
+  - component: {fileID: 1199501968}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -959,6 +963,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   cam: {fileID: 963194227}
+--- !u!114 &1199501968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199501960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4009a2d195f734cb7217099dcde6a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 10
+  currentHp: 0
 --- !u!1 &1350202854
 GameObject:
   m_ObjectHideFlags: 0
